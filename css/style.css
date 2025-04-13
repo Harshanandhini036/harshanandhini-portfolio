@@ -44,88 +44,171 @@ body{
     font-size: 1.2rem;
 }
 /* styling home section starts */
-.home{
-    background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
-    padding: 80px 30px 10px 0px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* BASE STYLES */
+.home {
+  background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
+  padding: 80px 30px 10px 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.home h2{
-    font-size: 3rem;
-    line-height: 4rem;
+
+.home h2 {
+  font-size: 2rem;
+  line-height: 4rem;
 }
-.c-orange{
-    color: #6f34fe;
-    font-weight: 700;
-    font-size: 4rem;
+
+.c-orange {
+  color: #6f34fe;
+  font-weight: 700;
+  font-size: 4rem;
 }
-.home p{
-    width: fit-content;
-    margin-top: 1rem;
-    font-size: 1.2rem;
+
+.home p {
+  width: fit-content;
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
-.h-btn:hover{
-    background: #6f34fe;
-    color: #fff;
-    transform: translateY(-20px);
-    transition-duration: 1s;
+
+.h-btn {
+  background-color: #fca61f;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
+
+.h-btn:hover {
+  background: #6f34fe;
+  color: #fff;
+  transform: translateY(-6px);
+  transition-duration: 0.5s;
+}
+
 .link {
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: #ffffff;
-    background:  #fca61f;
-    padding: 12px 20px;
-    margin: 10px;
-    border-radius: 12px;
-    position: relative;
-    display: inline-block;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  
-  .link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-/* adding animation to home section image  */
-.home img{
-    animation: floatimg 4s ease-in-out infinite;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: #fca61f;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 12px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Animation */
+.home img {
+  animation: floatimg 4s ease-in-out infinite;
 }
 
 @keyframes floatimg {
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(-24px);
-    }
-    100%{
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-24px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 992px) {
+  .home {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .home h2 {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+  }
+
+  .c-orange {
+    font-size: 3rem;
+  }
+
+  .home p {
+    font-size: 1.1rem;
+  }
+
+  .h-btn {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .home h2 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .c-orange {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .link {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+/* AOS fallback for small screens */
+@media (max-width: 576px) {
+  [data-aos] {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* General fix to prevent side scrolling */
+body, html {
+  overflow-x: hidden;
+}
+
 
 /* expertise section starts */
 .heading small{
